@@ -128,7 +128,7 @@ rss:
       url: "https://finance.yahoo.com/news/rssindex"
     - id: "youtube-channel-jeffsu"
       name: "Jeff Su YouTube"
-      url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCwAnu0IqInVg1Ai2AbtTMaA"
+      url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCwAnu01qlnVg1Ai2AbtTMaA"
 
     # 自定义源示例
     # - id: "custom-feed"
