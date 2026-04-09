@@ -55,28 +55,28 @@ schedule:
 platforms:
   enabled: true                         # 是否启用热榜平台抓取
   sources:
-  #  - id: "toutiao"
-   #   name: "今日头条"
-   # - id: "baidu"
-   #   name: "百度热搜"
-   # - id: "wallstreetcn-hot"
-   #   name: "华尔街见闻"
-   # - id: "thepaper"
-   #   name: "澎湃新闻"
-   # - id: "bilibili-hot-search"
-   #   name: "bilibili 热搜"
-   # - id: "cls-hot"
-   #   name: "财联社热门"
-   # - id: "ifeng"
-   #   name: "凤凰网"
-   # - id: "tieba"
-   #   name: "贴吧"
-   # - id: "weibo"
-  #    name: "微博"
-  #  - id: "douyin"
-  #    name: "抖音"
-     - id: "zhihu"
-       name: "知乎"
+    - id: "toutiao"
+      name: "今日头条"
+    - id: "baidu"
+      name: "百度热搜"
+    - id: "wallstreetcn-hot"
+      name: "华尔街见闻"
+    - id: "thepaper"
+      name: "澎湃新闻"
+    - id: "bilibili-hot-search"
+      name: "bilibili 热搜"
+    - id: "cls-hot"
+      name: "财联社热门"
+    - id: "ifeng"
+      name: "凤凰网"
+    - id: "tieba"
+      name: "贴吧"
+    - id: "weibo"
+      name: "微博"
+    - id: "douyin"
+      name: "抖音"
+    - id: "zhihu"
+      name: "知乎"
 
 
 
@@ -126,31 +126,10 @@ rss:
     - id: "yahoo-finance"
       name: "雅虎财经"
       url: "https://finance.yahoo.com/news/rssindex"
-# 新增外国网站
-    - id: "reddit-worldnews"
-      name: "🌍 Reddit 世界新闻"
-      url: "https://www.reddit.com/r/worldnews/.rss"
-      
-    - id: "reddit-technology"
-      name: "💻 Reddit 科技"
-      url: "https://www.reddit.com/r/technology/.rss"
-      
-    - id: "techcrunch"
-      name: "🚀 TechCrunch"
-      url: "http://feeds.feedburner.com/TechCrunch"
-      
-    - id: "bbc-news"
-      name: "📰 BBC News"
-      url: "http://feeds.bbci.co.uk/news/rss.xml"
-      
-    - id: "the-verge"
-      name: "🔧 The Verge"
-      url: "https://www.theverge.com/rss/index.xml"
+    - id: "youtube-channel-UCwAnu01qlnVg1Ai2AbtTMaA" # 唯一ID，建议包含频道ID
+      name: "我关注的YouTube频道"                     # 显示名称，可自定义
+      url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCwAnu01qlnVg1Ai2AbtTMaA"
 
-    - id: "youtube-trending"
-      name: "YouTube 全球热门"
-      url: "https://youtube.112114.xyz/trending"
-     # url: "https://rsshub.app/youtube/trending"
     # 自定义源示例
     # - id: "custom-feed"
     #   name: "自定义源"
@@ -383,7 +362,7 @@ notification:
 # ===============================================================
 storage:
   # 存储后端选择
-  # - auto: 自动选择（GitHub Actions 且配置了远程存储 → remote）
+  # - auto: 自动选择（GitHub Actions 且配置了远程存储 → remote，否则 → local）
   # - local: 本地 SQLite + TXT/HTML 文件
   # - remote: 远程云存储（S3 兼容协议，支持 R2/OSS/COS 等）
   backend: "auto"
@@ -441,7 +420,7 @@ ai:
   
   model: "deepseek/deepseek-chat"
 
-  api_key: "sk-893ec9229ed64b9cb5589135b95b2511"                       # API Key（建议使用环境变量 AI_API_KEY）
+  api_key: ""                       # API Key（建议使用环境变量 AI_API_KEY）
   
   api_base: ""                      # 自定义 API 端点（可选，大多数情况留空）
                                     # 示例: https://api.openai.com/v1（自建代理或兼容接口）
@@ -531,7 +510,7 @@ ai_analysis:
                                       # GitHub Action 部署默认推送约 20 次（每小时推送一次）， 约 0.1 元/天
                                       # Docker 部署默认推送 48 次(每半小时推送一次)， 约 0.2 元/天
 
-  include_rss: true               # 是否包含 RSS 内容进行分析
+  include_rss: false                # 是否包含 RSS 内容进行分析
   
   include_standalone: true          # 是否将独立展示区数据纳入 AI 分析
                                     # 数据源列表来自 display.standalone.platforms / display.standalone.rss_feeds
@@ -589,15 +568,14 @@ advanced:
   crawler:
     request_interval: 2000            # 请求间隔（毫秒）
     use_proxy: false                  # 是否启用代理
-    #default_proxy: "http://127.0.0.1:7897"
     default_proxy: "http://127.0.0.1:10801"
 
   # RSS 设置
   rss:
     request_interval: 1000            # 请求间隔（毫秒）
     timeout: 15                       # 请求超时（秒）
-    use_proxy: false                 # 是否使用代理
-    proxy_url: "http://127.0.0.1:7897"                     # RSS 专属代理（留空则使用 crawler.default_proxy）
+    use_proxy: false                  # 是否使用代理
+    proxy_url: ""                     # RSS 专属代理（留空则使用 crawler.default_proxy）
 
   # 排序权重（用于重新排序不同平台的热搜）
   # 合起来等于 1
