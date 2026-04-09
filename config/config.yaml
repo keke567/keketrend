@@ -145,7 +145,8 @@ rss:
       
     - id: "the-verge"
       name: "🔧 The Verge"
-      url: "https://www.theverge.com/rss/index.xml"   
+      url: "https://www.theverge.com/rss/index.xml"
+
     - id: "youtube-trending"
       name: "YouTube 全球热门"
       url: "https://youtube.112114.xyz/trending"
@@ -382,7 +383,7 @@ notification:
 # ===============================================================
 storage:
   # 存储后端选择
-  # - auto: 自动选择（GitHub Actions 且配置了远程存储 → remote，否则 → local）
+  # - auto: 自动选择（GitHub Actions 且配置了远程存储 → remote）
   # - local: 本地 SQLite + TXT/HTML 文件
   # - remote: 远程云存储（S3 兼容协议，支持 R2/OSS/COS 等）
   backend: "auto"
