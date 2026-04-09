@@ -129,7 +129,8 @@ rss:
     - id: "youtube-channel-jeffsu"
       name: "Jeff Su YouTube"
       url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCwAnu01qlnVg1Ai2AbtTMaA"
-
+      max_age_days: 70 
+      enabled: true
     # 自定义源示例
     # - id: "custom-feed"
     #   name: "自定义源"
