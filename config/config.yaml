@@ -126,9 +126,9 @@ rss:
     - id: "yahoo-finance"
       name: "雅虎财经"
       url: "https://finance.yahoo.com/news/rssindex"
-    - id: "youtube-channel-UCwAnu01qlnVg1Ai2AbtTMaA" # 唯一ID，建议包含频道ID
-      name: "我关注的YouTube频道"                     # 显示名称，可自定义
-      url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCwAnu01qlnVg1Ai2AbtTMaA"
+    - id: "youtube-channel-jeffsu"
+      name: "Jeff Su YouTube"
+      url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCwAnu0IqInVg1Ai2AbtTMaA"
 
     # 自定义源示例
     # - id: "custom-feed"
